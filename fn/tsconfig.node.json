@@ -1,4 +1,5 @@
 {
+  // This file is only for type-checking vite.config.ts (not part of the main app build)
   "compilerOptions": {
     "target": "ES2022",
     "lib": ["ES2023"],
