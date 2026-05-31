@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 225 23 72;
+  --dark-900: 10 10 12;
+  --dark-800: 18 18 20;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Luxury Automotive Theme */
+.glass {
+  background: rgba(18, 18, 20, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-hover {
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), 
+              box-shadow 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 
+              0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.car-card {
+  overflow: hidden;
+  position: relative;
+}
+
+.car-card img {
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.car-card:hover img {
+  transform: scale(1.08);
+}
+
+.modal {
+  animation: modalEnter 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.filter-chip {
+  transition: all 0.15s ease;
+}
+
+.filter-chip.active {
+  background-color: rgb(225 23 72);
+  color: white;
+  border-color: rgb(225 23 72);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1e;
+}
+::-webkit-scrollbar-thumb {
+  background: #3f3f45;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e11d48;
+}
+
+/* Price formatting */
+.price {
+  font-feature-settings: "tnum";
+}
+
+/* Image loading skeleton */
+.img-skeleton {
+  background: linear-gradient(90deg, #1a1a1e 25%, #242429 50%, #1a1a1e 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Range slider styling */
+input[type="range"] {
+  accent-color: #e11d48;
+}
+
+/* Beautiful focus states */
+input:focus, select:focus, button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(225, 23, 72, 0.15);
+}
+
+/* Compare drawer */
+.compare-drawer {
+  animation: slideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
