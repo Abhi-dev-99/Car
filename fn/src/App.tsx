@@ -8,8 +8,10 @@ import { useQuery, useMutation } from '@tanstack/react-query'
 import { toast } from 'sonner'
 import { Car, Inquiry } from './types'
 
-// API base (uses Vite proxy in dev)
-const API = '/api'
+// API base
+// In development: uses Vite proxy (/api → localhost:4000)
+// In production: uses VITE_API_URL (set on Vercel to your Railway backend)
+const API = (import.meta.env.VITE_API_URL || '/api').replace(/\/$/, '')
 
 // Types
 interface Filters {
